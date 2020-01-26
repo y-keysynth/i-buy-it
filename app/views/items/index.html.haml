@@ -17,7 +17,7 @@
         %td= item.title
         %td= item.details
         %td= item.price
-        %td= item.user_id
+        -# %td= item.user_id
         %td= link_to 'Show', item
         %td= link_to 'Edit', edit_item_path(item)
         %td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }

@@ -3,10 +3,10 @@
 %table
   %thead
     %tr
+      %th User
       %th Title
       %th Details
       %th Price
-      %th User
       %th
       %th
       %th
@@ -14,10 +14,10 @@
   %tbody
     - @items.each do |item|
       %tr
+        %td= current_user.id
         %td= item.title
         %td= item.details
         %td= item.price
-        %td= item.user_id
         %td= link_to 'Show', item
         %td= link_to 'Edit', edit_item_path(item)
         %td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }

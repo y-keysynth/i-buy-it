@@ -1,0 +1,19 @@
+%h1 Listing transacts
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @transacts.each do |transact|
+      %tr
+        %td= link_to 'Show', transact
+        %td= link_to 'Edit', edit_transact_path(transact)
+        %td= link_to 'Destroy', transact, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Transact', new_transact_path

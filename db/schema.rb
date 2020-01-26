@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_26_055541) do
+ActiveRecord::Schema.define(version: 2020_01_26_072350) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -22,15 +22,15 @@ ActiveRecord::Schema.define(version: 2020_01_26_055541) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
-  create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "transacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id"
-    t.bigint "seller_id"
     t.bigint "buyer_id"
+    t.bigint "seller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["buyer_id"], name: "index_transactions_on_buyer_id"
-    t.index ["item_id"], name: "index_transactions_on_item_id"
-    t.index ["seller_id"], name: "index_transactions_on_seller_id"
+    t.index ["buyer_id"], name: "index_transacts_on_buyer_id"
+    t.index ["item_id"], name: "index_transacts_on_item_id"
+    t.index ["seller_id"], name: "index_transacts_on_seller_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_01_26_055541) do
   end
 
   add_foreign_key "items", "users"
-  add_foreign_key "transactions", "items"
-  add_foreign_key "transactions", "users", column: "buyer_id"
-  add_foreign_key "transactions", "users", column: "seller_id"
+  add_foreign_key "transacts", "items"
+  add_foreign_key "transacts", "users", column: "buyer_id"
+  add_foreign_key "transacts", "users", column: "seller_id"
 end

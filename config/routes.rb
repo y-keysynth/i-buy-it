@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :transacts
   root 'items#index'
 
-  resources :transactions
   resources :items
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',

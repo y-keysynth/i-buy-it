@@ -40,15 +40,18 @@ class TransactsController < ApplicationController
   # PATCH/PUT /transacts/1
   # PATCH/PUT /transacts/1.json
   def update
-    respond_to do |format|
-      if @transact.update(transact_params)
-        format.html { redirect_to @transact, notice: 'Transact was successfully updated.' }
-        format.json { render :show, status: :ok, location: @transact }
-      else
-        format.html { render :edit }
-        format.json { render json: @transact.errors, status: :unprocessable_entity }
-      end
-    end
+    @transact = Transact.new(transact_params)
+    @transact.seller_id == current_user.id
+    @transact.save
+    # respond_to do |format|
+    #   if @transact.update(transact_params)
+    #     format.html { redirect_to @transact, notice: 'Transact was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @transact }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @transact.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /transacts/1

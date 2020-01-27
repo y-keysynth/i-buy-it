@@ -9,7 +9,7 @@
   = @item.price
 
 - if current_user.id != @item.user_id
-  = form_with  url: @transact, method: :get do |f|
+  = form_with(model: @transact, local: true) do |f|
     %p
       = f.submit "売ります", method: :update
       -# = f.submit "売ります", method: :update, data: { confirm: '本当に売りますか?' }

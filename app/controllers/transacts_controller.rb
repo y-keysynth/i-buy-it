@@ -40,9 +40,9 @@ class TransactsController < ApplicationController
   # PATCH/PUT /transacts/1
   # PATCH/PUT /transacts/1.json
   def update
-    @transact = Transact.new(transact_params)
+    @transact = Transact.find(params[:id])
     @transact.seller_id == current_user.id
-    @transact.save
+    @transact.save!
     # respond_to do |format|
     #   if @transact.update(transact_params)
     #     format.html { redirect_to @transact, notice: 'Transact was successfully updated.' }

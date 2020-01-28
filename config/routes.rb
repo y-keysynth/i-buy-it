@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   } 
   resources :items
   
-  
   devise_scope :user do
     # get "user/:id", :to => "users/registrations#detail"
     get "user/:id", :to => "items#index"
@@ -15,12 +14,5 @@ Rails.application.routes.draw do
     get "login", :to => "users/sessions#new"
     get "logout", :to => "users/sessions#destroy"
   end
-
-  resources :transacts do
-    member do
-      patch "transacts/update"
-
-    end
-  end  
 
 end

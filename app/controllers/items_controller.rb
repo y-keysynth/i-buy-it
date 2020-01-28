@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
-    @item.build_transact(buyer_id: current_user.id)
+    @item.user_id = current_user.id
 
     respond_to do |format|
       if @item.save
@@ -44,10 +44,10 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @item }
+        # format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+        # format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -70,6 +70,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:title, :details, :price).merge(user_id: current_user.id)
+      params.require(:item).permit(:title, :details, :price, :seller_id)
+      # .merge(user_id: current_user.id)
     end
 end

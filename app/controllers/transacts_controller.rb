@@ -40,9 +40,10 @@ class TransactsController < ApplicationController
   # PATCH/PUT /transacts/1
   # PATCH/PUT /transacts/1.json
   def update
-    @transact = Transact.find(params[:id])
-    @transact.seller_id == current_user.id
-    @transact.save!
+    binding.pry
+    @transact = Transact.find_by(item_id: params[:id])
+    @transact.seller_id = current_user.id
+    @transact.save
     # respond_to do |format|
     #   if @transact.update(transact_params)
     #     format.html { redirect_to @transact, notice: 'Transact was successfully updated.' }
@@ -66,6 +67,12 @@ class TransactsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def transact_params
+      params.permit(
+        :id, :seller_id
+      )
+    end
+
     def set_transact
       @transact = Transact.find(params[:id])
     end

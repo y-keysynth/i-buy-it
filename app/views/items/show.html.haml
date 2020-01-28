@@ -9,14 +9,9 @@
   = @item.price
 
 - if current_user.id != @item.user_id
-  = form_for @transact ,transact_path(current_user.id), local: true, method: :PATCH do |f|
-    -# = form_with url: "item/transact/:id", method: :get do |f|
-  
-
+  = form_with(mode: item, local: true) do |f|
     %p
-      = f.hidden_field :seller_id, value:current_user.id
-      = f.submit "売ります"
-      -# = f.submit "売ります", method: :update, data: { confirm: '本当に売りますか?' }
+      売ります
 
 
 - if current_user.id == @item.user_id

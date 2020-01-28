@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.text       :details,  null: false
       t.integer    :price,    null: false
       t.integer    :seller_id
-      t.references :buyer, foreign_key: { to_table: :users }
+      t.references :user, foreign_key:
 
       t.timestamps
     end

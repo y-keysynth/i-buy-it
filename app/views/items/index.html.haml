@@ -24,7 +24,8 @@
         - elsif current_user.id == item.user_id
           %td= link_to 'Edit', edit_item_path(item)
           %td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }
-
+        - elsif item.seller_id != nil
+          %td= "売買成立"
 %br
 
 = link_to 'New Item', new_item_path

@@ -20,12 +20,14 @@
         %td= item.details
         %td= item.price
         %td= link_to 'Show', item
-        - if current_user == nil
+        - if item.seller_id != nil
+          %td= "売買成立"
+        - elsif current_user == nil
         - elsif current_user.id == item.user_id
           %td= link_to 'Edit', edit_item_path(item)
-          %td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }
-        - elsif item.seller_id != nil
-          %td= "売買成立"
+          %td= link_to 'Destroy', item, method: :delete, data: { confirm: '本当に削除しますか?' }
+        - else
+
 %br
 
 = link_to 'New Item', new_item_path

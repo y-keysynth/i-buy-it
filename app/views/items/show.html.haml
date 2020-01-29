@@ -8,18 +8,17 @@
   %b Price:
   = @item.price
 
-- if current_user.id != @item.user_id
+- if @item.seller_id != nil
+  %p
+    売買成立
+- elsif current_user == nil
+- elsif @item.seller_id == nil and current_user.id != @item.user_id
   = form_for @item do |f|
+    = f.hidden_field :seller_id, value: current_user.id
     %p
-      = f.hidden_field :seller_id, value: current_user.id
-      - if @item.seller_id != nil
-        %p
-          売買成立
-      - else
-        = f.submit '売ります'
-
-
-- if current_user.id == @item.user_id
+      = f.submit '売ります', data: { confirm: ' 本当に売りますか?' }
+- elsif current_user.id == @item.user_id
   = link_to 'Edit', edit_item_path(@item)
+- else
 \|
 = link_to 'Back', items_path

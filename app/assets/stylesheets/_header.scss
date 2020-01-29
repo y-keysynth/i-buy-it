@@ -1,0 +1,17 @@
+#wrapper {
+  .header {
+    &__brand {
+      height: 38px;
+      padding: 0 8px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+    &__l_header {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #000000;
+    }
+  }
+}

@@ -1,10 +1,23 @@
 #wrapper {
   .side-menu {
-    .side-menu__page-title {
-
+    &__page-title {
+      width: 282px;
+      height: 32px;
+      background: #662929;
+      padding: 4px 8px 4px 10px;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 6px 6px 0 0;
+      line-height: 32px;
     }
-    .side-menu__list {
-
+    &__list {
+      width: 268px;
+      height: 48px;
+      padding: 0 16px;
+      font-size: 14px;
+      line-height: 48px;
+      background-color: #262626;
+      border-bottom:1px groove #999999;
     }
 
   }

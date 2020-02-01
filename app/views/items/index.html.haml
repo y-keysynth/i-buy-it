@@ -5,7 +5,7 @@
         買取募集一覧
       - @items.each do |item|
         = link_to(item) do
-          .item-box
+          .item-box.link-hover
             .item-box__day
               = item.created_at.to_s(:datetime_jp)
             .item-box__title

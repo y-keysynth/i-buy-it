@@ -1,0 +1,22 @@
+#wrapper {
+  .main {
+    display: flex;
+    margin: 0 auto;
+    // margin: 0 144px;
+    padding: 10px 0 40px;
+    width: 940px;
+    border: solid #008080;
+    &__list {
+      width: 620px;
+      margin: 0 0 10px;
+      padding: 0 0 1px;
+      border: solid #008080;
+    }
+    &__side-menu {
+      margin: 0 10px 0 0;
+      width: 300px;
+      border: solid #008080;
+
+    }
+  }
+}

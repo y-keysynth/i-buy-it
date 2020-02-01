@@ -1,4 +1,10 @@
-メニュー
-= link_to "TOP", items_path
+#wrapper
+  .side-menu
+    .side-menu__page-title
+      MENU
+    .side-menu__list
+      = link_to "買取募集一覧", items_path
+    .side-menu__list
+      = link_to '買取募集を出す', new_item_path
 
-= link_to 'New Item', new_item_path
+

@@ -7,6 +7,17 @@
     &__list {
       width: 620px;
       color: #e5e5e5;
+      &__page-title {
+        width: 598px;
+        height: 32px;
+        padding: 4px 8px 4px 8px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #334b80;
+        line-height: 32px;
+        border-radius: 6px 6px 0 0;
+      }
     }
     &__side-menu {
       margin: 0 0 0 10px;
@@ -15,16 +26,6 @@
       border: solid #008080;
     }
   }
-}
-
-.page-title {
-  width: 598px;
-  height: 32px;
-  padding: 4px 8px 4px 8px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #334b80;
 }
 
 .item-box {

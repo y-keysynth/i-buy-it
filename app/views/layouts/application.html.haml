@@ -7,20 +7,22 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
   %body
     #wrapper
       .header
         .header__brand
-          [sample site] - I buy it -
-        .header__l_header
+          %span.size18 [Sample Application]
+          %span.size16 - I buy it -
+        .header__l-header
           - if user_signed_in?
             = current_user.email
-            = link_to "TOP", items_path
             = link_to "ログアウト", logout_path
           - else
-            = link_to "TOP", items_path
             = link_to "新規登録", signup_path
             = link_to "ログイン", login_path
+        .header__main-nav
+          = link_to "TOP", items_path
 
     = yield
 

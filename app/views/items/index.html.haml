@@ -1,33 +1,37 @@
-%h1 Listing items
-%p#notice= notice
+#wrapper
+  .main
+    %h1 Listing items
+    %p#notice= notice
 
-%table
-  %thead
-    %tr
-      %th User
-      %th Title
-      %th Details
-      %th Price
-      %th
-      %th
-      %th
+    %table
+      %thead
+        %tr
+          %th User
+          %th Title
+          %th Details
+          %th Price
+          %th
+          %th
+          %th
 
-  %tbody
-    - @items.each do |item|
-      %tr
-        %td= item.user.email
-        %td= item.title
-        %td= item.details
-        %td= item.price
-        %td= link_to 'Show', item
-        - if item.seller_id != nil
-          %td= "売買成立"
-        - elsif current_user == nil
-        - elsif current_user.id == item.user_id
-          %td= link_to 'Edit', edit_item_path(item)
-          %td= link_to 'Destroy', item, method: :delete, data: { confirm: '本当に削除しますか?' }
-        - else
+      %tbody
+        - @items.each do |item|
+          %tr
+            %td= item.user.email
+            %td= item.title
+            %td= item.details
+            %td= item.price
+            %td= link_to 'Show', item
+            - if item.seller_id != nil
+              %td= "売買成立"
+            - elsif current_user == nil
+            - elsif current_user.id == item.user_id
+              %td= link_to 'Edit', edit_item_path(item)
+              %td= link_to 'Destroy', item, method: :delete, data: { confirm: '本当に削除しますか?' }
+            - else
 
-%br
+    %br
 
-= link_to 'New Item', new_item_path
+    = link_to 'New Item', new_item_path
+  .side-menu
+    = render 'side-menu'

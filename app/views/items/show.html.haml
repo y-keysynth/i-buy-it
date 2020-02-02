@@ -39,7 +39,7 @@
             = form_for @item do |f|
               = f.hidden_field :seller_id, value: current_user.id
               %p
-                = f.submit '売ります', data: { confirm: ' 本当に売りますか?' }
+                = f.submit '売ります', class: "btn-flat-border", data: { confirm: ' 本当に売りますか?' }
           - else
 
         .back-edit-destroy-box

@@ -1,5 +1,11 @@
-%h1 New item
+#wrapper
+  .main
+    .main__list
+      .main__list__page-title
+        「買います」募集の詳細
+      .item-box
+        = render 'form'
+        = link_to 'Back', items_path
 
-= render 'form'
-
-= link_to 'Back', items_path
+    .main__side-menu
+      = render 'side-menu'

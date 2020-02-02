@@ -33,34 +33,6 @@
                   = link_to '編集', edit_item_path(item)
                   = link_to '削除', item, class: "margin-left-10", method: :delete, data: { confirm: '本当に削除しますか?' }
               - else
-      -# %h1 Listing items
-      -# %p
-
-      -# %table
-      -#   %thead
-      -#     %tr
-      -#       %th User
-      -#       %th Title
-      -#       %th Details
-      -#       %th Price
-      -#       %th
-      -#       %th
-      -#       %th
-
-      -#   %tbody
-          -# - @items.each do |item|
-          -#   %tr
-          -#     %td= item.user.email
-          -#     %td= item.title
-          -#     %td= item.details
-          -#     %td= item.price
-          -#     %td= link_to 'Show', item
-          -#     - if item.seller_id != nil
-          -#       %td= "売買成立"
-          -#     - elsif current_user == nil
-          -#     - elsif current_user.id == item.user_id
-          -#       %td= link_to 'Edit', edit_item_path(item)
-          -#       %td= link_to 'Destroy', item, method: :delete, data: { confirm: '本当に削除しますか?' }
-          -#     - else
+              
     .main__side-menu
       = render 'side-menu'

@@ -32,7 +32,8 @@
   padding: 8px 10px;
   background-color: #262626;
   border-bottom:1px groove #999999;
-
+  overflow-wrap: break-word;
+  word-wrap: break-word;
   &__day {
     height: 18px;
     margin: 0 0 4px;
@@ -43,8 +44,6 @@
     font-size: 16px;
     font-weight: bold;
     line-height: 1.2;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
   }
   &__price {
     height: 19px;
@@ -75,4 +74,16 @@
 
 .link-hover:hover {
   background-color: #333;
+}
+
+
+.back-edit-destroy-box {
+  display: flex;
+  &__back {
+    margin:0 auto 8px 7px;
+
+  }
+  &__edit-destroy {
+    margin:0 7px 8px auto;
+  }
 }

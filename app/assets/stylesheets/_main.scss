@@ -54,7 +54,15 @@
     height: 40px;
     padding-left: 40px;
     line-height: 40px;
+    display: flex;
+    .edit-destroy-box {
+      margin:0 7px 0 auto;
+    }
   }
+}
+
+.margin-left-10 {
+  margin-left: 10px;
 }
 
 .link-hover:hover {

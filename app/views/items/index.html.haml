@@ -8,28 +8,31 @@
           .item-box.link-hover
             - if item.seller_id != nil
               .triangle
+              .item-box__day
+                = item.created_at.to_s(:datetime_jp)
+              .item-box__title
+                = item.title
+              .item-box__price
+                = item.price
+                円
             - else
-            .item-box__day
-              = item.created_at.to_s(:datetime_jp)
-            .item-box__title
-              「
-              = item.title
-              」を売ってください！！
-            .item-box__price
-              = item.price
-              円で買います！
+              .item-box__day
+                = item.created_at.to_s(:datetime_jp)
+              .item-box__title
+                「
+                = item.title
+                」を売ってください！！
+              .item-box__price
+                = item.price
+                円で買います！
             .item-box__name
               = item.user.email
-              - if item.seller_id != nil
-                = "売買成立"
-              - elsif current_user == nil
-              - elsif current_user.id == item.user_id
-                = link_to '編集', edit_item_path(item)
-                = link_to '削除', item, method: :delete, data: { confirm: '本当に削除しますか?' }
+              - if current_user == nil
+              - elsif current_user.id == item.user_id && item.seller_id == nil
+                .edit-destroy-box
+                  = link_to '編集', edit_item_path(item)
+                  = link_to '削除', item, class: "margin-left-10", method: :delete, data: { confirm: '本当に削除しますか?' }
               - else
-
-
-
       -# %h1 Listing items
       -# %p
 
@@ -59,8 +62,5 @@
           -#       %td= link_to 'Edit', edit_item_path(item)
           -#       %td= link_to 'Destroy', item, method: :delete, data: { confirm: '本当に削除しますか?' }
           -#     - else
-
-      %br
-
     .main__side-menu
       = render 'side-menu'

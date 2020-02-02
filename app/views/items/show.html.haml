@@ -1,28 +1,56 @@
-%p
-  %b Title:
-  = @item.title
-%p
-  %b Details:
-  = @item.details
-%p
-  %b Price:
-  = @item.price
+#wrapper
+  .main
+    .main__list
+      .main__list__page-title
+        「買います」募集の詳細
+      .item-box
+        .item-box__name.margin-bottom-10
+          = @item.user.email
 
-- if @item.seller_id != nil
-  %p
-    売買成立
-- elsif current_user == nil
-- elsif @item.seller_id == nil and current_user.id != @item.user_id
-  = form_for @item do |f|
-    = f.hidden_field :seller_id, value: current_user.id
-    %p
-      = f.submit '売ります', data: { confirm: ' 本当に売りますか?' }
-- elsif current_user.id == @item.user_id
-  = link_to 'Edit', edit_item_path(@item)
-- else
-\|
-= link_to 'Back', items_path
+        - if @item.seller_id != nil
+          .triangle
+          .item-box__day
+            = @item.created_at.to_s(:datetime_jp)
+          .item-box__title
+            = @item.title
+          .item-box__price
+            = @item.price
+            円
+          .item-box__details
+            = @item.details
+        - else
+          .item-box__day
+            = @item.created_at.to_s(:datetime_jp)
+          .item-box__title
+            「
+            = @item.title
+            」を買います！！
+          .item-box__price
+            = @item.price
+            円
+          .item-box__details
+            = @item.details
+            
+          - if @item.seller_id != nil
+            %p
+              売買成立
+          - elsif current_user == nil
+          - elsif @item.seller_id == nil and current_user.id != @item.user_id
+            = form_for @item do |f|
+              = f.hidden_field :seller_id, value: current_user.id
+              %p
+                = f.submit '売ります', class: "btn-flat-border", data: { confirm: ' 本当に売りますか?' }
+          - else
 
+        .back-edit-destroy-box
+          .back-edit-destroy-box__back
+            = link_to '戻る', items_path
+          .back-edit-destroy-box__edit-destroy
+            - if current_user == nil
+            - elsif current_user.id == @item.user_id
+              = link_to '編集', edit_item_path(@item)
+              = link_to '削除', @item, class: "margin-left-10", method: :delete, data: { confirm: '本当に削除しますか?' }
+            - else
 
-.main__side-menu
-  = render 'side-menu'
+    .main__side-menu
+      = render 'side-menu'

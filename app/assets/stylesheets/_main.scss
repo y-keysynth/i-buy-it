@@ -29,11 +29,11 @@
 
 .item-box {
   width: 594px;
-  height: 102px;
   padding: 8px 10px;
   background-color: #262626;
   border-bottom:1px groove #999999;
-
+  overflow-wrap: break-word;
+  word-wrap: break-word;
   &__day {
     height: 18px;
     margin: 0 0 4px;
@@ -59,12 +59,31 @@
       margin:0 7px 0 auto;
     }
   }
+  &__details {
+    padding: 20px 40px;
+  }
 }
 
 .margin-left-10 {
   margin-left: 10px;
 }
+.margin-bottom-10 {
+  margin-bottom: 10px;
+  border-bottom: solid 10px #333333;
+}
 
 .link-hover:hover {
   background-color: #333;
+}
+
+
+.back-edit-destroy-box {
+  display: flex;
+  &__back {
+    margin:0 auto 8px 7px;
+
+  }
+  &__edit-destroy {
+    margin:0 7px 8px auto;
+  }
 }

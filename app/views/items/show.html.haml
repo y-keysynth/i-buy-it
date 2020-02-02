@@ -31,10 +31,7 @@
           .item-box__details
             = @item.details
             
-          - if @item.seller_id != nil
-            %p
-              売買成立
-          - elsif current_user == nil
+          - if current_user == nil
           - elsif @item.seller_id == nil and current_user.id != @item.user_id
             = form_for @item do |f|
               = f.hidden_field :seller_id, value: current_user.id
@@ -42,7 +39,7 @@
                 = f.submit '売ります', class: "btn-flat-border", data: { confirm: ' 本当に売りますか?' }
           - else
 
-        .back-edit-destroy-box
+        .back-edit-destroy-box.margin-top-10
           .back-edit-destroy-box__back
             = link_to '戻る', items_path
           .back-edit-destroy-box__edit-destroy

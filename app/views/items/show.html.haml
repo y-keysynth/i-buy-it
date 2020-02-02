@@ -1,28 +1,37 @@
-%p
-  %b Title:
-  = @item.title
-%p
-  %b Details:
-  = @item.details
-%p
-  %b Price:
-  = @item.price
+#wrapper
+  .main
+    .main__list
+      .main__list__page-title
+        「買います」募集の詳細
+      .item-box
+        .item-box__day
+          = @item.created_at.to_s(:datetime_jp)
+        .item-box__title
+          「
+          = @item.title
+          」を買います！！
+        .item-box__price
+          = @item.price
+          円
+        .item-box__details
+          = @item.details
+        .item-box__name
+          = @item.user.email
+          
+        - if @item.seller_id != nil
+          %p
+            売買成立
+        - elsif current_user == nil
+        - elsif @item.seller_id == nil and current_user.id != @item.user_id
+          = form_for @item do |f|
+            = f.hidden_field :seller_id, value: current_user.id
+            %p
+              = f.submit '売ります', data: { confirm: ' 本当に売りますか?' }
+        - elsif current_user.id == @item.user_id
+          = link_to 'Edit', edit_item_path(@item)
+        - else
+        \|
+        = link_to 'Back', items_path
 
-- if @item.seller_id != nil
-  %p
-    売買成立
-- elsif current_user == nil
-- elsif @item.seller_id == nil and current_user.id != @item.user_id
-  = form_for @item do |f|
-    = f.hidden_field :seller_id, value: current_user.id
-    %p
-      = f.submit '売ります', data: { confirm: ' 本当に売りますか?' }
-- elsif current_user.id == @item.user_id
-  = link_to 'Edit', edit_item_path(@item)
-- else
-\|
-= link_to 'Back', items_path
-
-
-.main__side-menu
-  = render 'side-menu'
+    .main__side-menu
+      = render 'side-menu'

@@ -20,15 +20,22 @@
             = @item.details
           - if current_user == nil
           - elsif @item.seller_id == current_user.id
-            .transaction-details
+            .transaction-details.margin-top-10
               あなたは
               = @item.user.email
               さんへ商品を売りました。
             .transaction-box
-              .transaction-box__user
+              .transaction-box__name
                 あなた
-              .transaction-box__figure
-              .transaction-box__user
+              .transaction-box__arrow
+                .arrow-box
+                  .arrow-box__upper
+                    .arrow_r
+                      商品
+                  .arrow-box__lower
+                    .arrow_l
+                      お金
+              .transaction-box__name
                 = @item.user.email
           - elsif @item.seller_id != current_user.id and @item.user.id != current_user.id
           - else

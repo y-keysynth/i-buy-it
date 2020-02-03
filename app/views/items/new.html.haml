@@ -2,10 +2,12 @@
   .main
     .main__list
       .main__list__page-title
-        「買います」募集の詳細
+        「買います」募集を作る
       .item-box
         = render 'form'
-        = link_to 'Back', items_path
+        .back-edit-destroy-box.margin-top-10
+          .back-edit-destroy-box__back
+            = link_to '戻る', items_path
 
     .main__side-menu
       = render 'side-menu'

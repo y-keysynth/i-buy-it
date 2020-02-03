@@ -56,6 +56,7 @@
     line-height: 40px;
     display: flex;
     .edit-destroy-box {
+      display: flex;
       margin:0 7px 0 auto;
     }
   }
@@ -86,9 +87,24 @@
   display: flex;
   &__back {
     margin:0 auto 8px 7px;
-
   }
   &__edit-destroy {
+    display: flex;
     margin:0 7px 8px auto;
   }
+}
+
+.transaction-details {
+
+}
+
+.transaction-box {
+  display: flex;
+  &__user {
+
+  }
+  &__figure {
+
+  }
+
 }

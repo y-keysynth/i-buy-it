@@ -10,10 +10,15 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @sell_user = User.find_by(id: @item.seller_id)
   end
 
   def show_myself
-    @items = Item.where(user_id: current_user.id)
+    @items = Item.where(user_id: current_user.id).where(seller_id: nil)
+  end
+
+  def show_close_myself
+    @items = Item.where(user_id: current_user.id).where.not(seller_id: nil)
   end
 
   def show_sell

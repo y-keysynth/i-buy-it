@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get :show_myself
+      get :show_close_myself
       get :show_sell
     end
   end

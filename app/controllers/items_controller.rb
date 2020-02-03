@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @sell_user = User.find_by(id: @item.seller_id)
   end
 
   def show_myself

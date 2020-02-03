@@ -39,10 +39,23 @@
                 = @item.user.email
           - elsif @item.seller_id != current_user.id and @item.user.id != current_user.id
           - else
-            .transaction-details
+            .transaction-details.margin-top-10
               あなたは
               = @sell_user.email
               さんから商品を買いました。
+            .transaction-box
+              .transaction-box__name
+                あなた
+              .transaction-box__arrow
+                .arrow-box
+                  .arrow-box__upper
+                    .arrow_r
+                      お金
+                  .arrow-box__lower
+                    .arrow_l
+                      商品
+              .transaction-box__name
+                = @item.user.email
         - else
           .item-box__day
             = @item.created_at.to_s(:datetime_jp)

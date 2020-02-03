@@ -6,14 +6,20 @@
         - @item.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :details
-    = f.text_area :details
-  .field
-    = f.label :price
-    = f.number_field :price
-  .actions
-    = f.submit 'Save'
+  .field-box
+    .field-box__title
+      = f.label :title, "タイトル"
+    .field-box__form
+      = f.text_field :title, class: "form-size-title"
+  .field-box
+    .field-box__title
+      = f.label :price, "値段"
+    .field-box__form
+      = f.number_field :price, class: "form-size-price"
+  .field-box
+    .field-box__title
+      = f.label :details, "詳細"
+    .field-box__form
+      = f.text_area :details, class: "form-size-details"
+  .submit-box
+    = f.submit '募集する', class: "btn-flat-border btn-width100"

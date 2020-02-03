@@ -22,4 +22,7 @@
     .field-box__form
       = f.text_area :details, class: "form-size-details"
   .submit-box
-    = f.submit '募集する', class: "btn-flat-border btn-width100"
+    -if @item.id == nil
+      = f.submit '募集する', class: "btn-flat-border btn-width100"
+    -else
+      = f.submit '編集する', class: "btn-flat-border btn-width100"

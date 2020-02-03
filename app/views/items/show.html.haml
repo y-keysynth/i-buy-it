@@ -55,7 +55,7 @@
             = link_to '戻る', :back
           .back-edit-destroy-box__edit-destroy
             - if current_user == nil
-            - elsif current_user.id == @item.user_id and @item.user_id == nil
+            - elsif current_user.id == @item.user_id and @item.seller_id == nil
               = link_to '編集', edit_item_path(@item)
               = link_to '削除', @item, class: "margin-left-10", method: :delete, data: { confirm: '本当に削除しますか?' }
             - else

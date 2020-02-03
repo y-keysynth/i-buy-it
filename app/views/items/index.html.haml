@@ -28,7 +28,7 @@
             .item-box__name
               = item.user.email
               - if current_user == nil
-              - elsif current_user.id == item.user_id && item.seller_id == nil
+              - elsif current_user.id == item.user_id and item.seller_id == nil
                 .edit-destroy-box
                   = link_to '編集', edit_item_path(item)
                   = link_to '削除', item, class: "margin-left-10", method: :delete, data: { confirm: '本当に削除しますか?' }

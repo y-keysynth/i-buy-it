@@ -15,12 +15,18 @@
           %span.size18 [Sample Application]
           %span.size16 - I buy it -
         .header__l-header
-          - if user_signed_in?
-            = current_user.email
-            = link_to "ログアウト", logout_path
-          - else
-            = link_to "新規登録", signup_path
-            = link_to "ログイン", login_path
+          .header-container
+            .head-my-character
+              - if user_signed_in?
+                .head-my-character__name
+                  = current_user.email
+                .head-my-character__status
+                  = link_to "ログアウト", logout_path
+              - else
+                .head-my-character__name
+                  = link_to "ログイン", login_path
+                .head-my-character__status
+                  = link_to "新規登録", signup_path
         .header__main-nav
           #notice= notice
 

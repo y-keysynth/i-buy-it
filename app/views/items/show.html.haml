@@ -11,6 +11,7 @@
           .triangle
           .item-box__day
             = @item.created_at.to_s(:datetime_jp)
+            = render partial: 'items/item', locals:{ item: @item }
           .item-box__title
             = @item.title
           .item-box__price
@@ -67,7 +68,6 @@
               = f.hidden_field :seller_id, value: current_user.id
               = f.submit '売ります', class: "btn-flat-border", data: { confirm: ' 本当に売りますか?' }
           - else
-        = render partial: 'items/item', locals:{ item: @item }
         .back-edit-destroy-box.margin-top-10
           .back-edit-destroy-box__back
             = link_to '戻る', :back

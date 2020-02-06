@@ -12,7 +12,7 @@
             = @item.created_at.to_s(:datetime_jp)
             = render partial: 'items/item', locals:{ item: @item }
           .item-box__title
-            = @item.title
+            = "「#{@item.title}」"
           .item-box__price
             = "#{@item.price} 円"
           .item-box__details

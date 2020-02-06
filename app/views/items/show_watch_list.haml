@@ -11,14 +11,14 @@
               .item-container__day
                 = item.created_at.to_s(:datetime_jp)
               .item-container__title
-                = item.title
+                = "「#{item.title}」"
               .item-container__price
                 = "#{item.price} 円"
             - else
               .item-container__day
                 = item.created_at.to_s(:datetime_jp)
               .item-container__title
-                = item.title
+                = "「#{item.title}」"
               .item-container__price
                 = "「#{item.title}」を買います！！"
             .item-container__name

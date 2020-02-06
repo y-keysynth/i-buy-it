@@ -13,11 +13,17 @@
       .side-menu__list.link-hover
         = link_to "「買います」募集一覧", items_path
       .side-menu__list.link-hover
-        = link_to '「買います」募集を作る', new_item_path
+        = link_to new_item_path do
+          %i.fas.fa-bookmark.orange
+          「買います」募集を作る
       .side-menu__list.link-hover
-        = link_to '「買います」募集をした商品 - 募集中', show_myself_items_path
+        = link_to show_myself_items_path do
+          %i.fas.fa-bookmark.orange
+          「買います」募集をした商品 - 募集中
       .side-menu__list.link-hover
-        = link_to '「買います」募集をした商品 - 売買成立',show_close_myself_items_path
+        = link_to show_close_myself_items_path do
+          %i.fas.fa-bookmark.orange
+          「買います」募集をした商品 - 売買成立
       .side-menu__list.link-hover
         = link_to '「売ります」をした商品 - 一覧', show_sell_items_path
       .side-menu__list.link-hover

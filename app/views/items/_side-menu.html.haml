@@ -21,8 +21,10 @@
       .side-menu__list.link-hover
         = link_to '「売ります」をした商品 - 一覧', show_sell_items_path
       .side-menu__list.link-hover
-        %i.fas.fa-bookmark.yellow
-        = link_to 'ウォッチリスト'
+        = link_to  do
+          %i.fas.fa-bookmark.yellow
+          ウォッチリスト
+
       .side-menu__list.link-hover
         = link_to 'ログアウト', logout_path
 

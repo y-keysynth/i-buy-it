@@ -26,9 +26,7 @@ class ItemsController < ApplicationController
   end
 
   def show_watch_list
-    current_user_have_likes = Like.where(user_id: current_user.id)
-    likes = current_user_have_likes.pluck(:item_id)
-    # //likesはげんじょう配列なので、idの配列に変える
+    likes = Like.where(user_id: current_user.id).pluck(:item_id)
     @items = Item.where(id: likes)
   end
 

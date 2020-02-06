@@ -6,7 +6,6 @@
       .item-box
         .item-box__name.margin-bottom-10
           = @item.user.email
-
         - if @item.seller_id != nil
           .triangle
           .item-box__day
@@ -62,7 +61,6 @@
             = "#{@item.price} 円"
           .item-box__details
             = @item.details
-            
           - if current_user == nil
           - elsif @item.seller_id == nil and current_user.id != @item.user_id
             = form_for @item do |f|

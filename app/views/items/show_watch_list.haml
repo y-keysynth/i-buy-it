@@ -2,7 +2,7 @@
   .main
     .main__list
       .main__list__page-title
-        「売ります」をした一覧
+        ウォッチリストをした商品
       - @items.each do |item|
         = link_to(item) do
           .item-container.link-hover
@@ -30,6 +30,7 @@
                 = link_to '削除', item, class: "margin-left-10", method: :delete, data: { confirm: '本当に削除しますか?' }
             .item-container__watch
               = render partial: 'items/item', locals:{ item: item }
+
               
     .main__side-menu
       = render 'side-menu'

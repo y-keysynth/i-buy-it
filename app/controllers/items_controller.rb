@@ -25,6 +25,11 @@ class ItemsController < ApplicationController
     @items = Item.where(seller_id: current_user.id)
   end
 
+  def show_watch_list
+    likes = Like.where(user_id: current_user.id).pluck(:item_id)
+    @items = Item.where(id: likes)
+  end
+
   # GET /items/new
   def new
     @item = Item.new

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get :show_myself
       get :show_close_myself
       get :show_sell
+      get :show_watch_list
     end
   end
 

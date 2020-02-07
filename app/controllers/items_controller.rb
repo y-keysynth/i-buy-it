@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all.order(created_at: "DESC")
+    @items = Item.all.order(created_at: "DESC").page(params[:page]).per(5)
   end
 
   # GET /items/1

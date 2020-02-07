@@ -5,7 +5,7 @@
         「買います」募集の詳細
       .item-box
         .item-box__name.margin-bottom-10
-          = @item.user.email
+          = @item.user.name
         - if @item.seller_id != nil
           .triangle
           .item-box__day
@@ -20,7 +20,7 @@
           - if current_user == nil
           - elsif @item.seller_id == current_user.id
             .transaction-details.margin-top-10
-              = "あなたは#{@item.user.email}さんへ商品を売りました。"
+              = "あなたは#{@item.user.name}さんへ商品を売りました。"
             .transaction-box
               .transaction-box__name
                 あなた
@@ -33,11 +33,11 @@
                     .arrow_l
                       お金
               .transaction-box__name
-                = @item.user.email
+                = @item.user.name
           - elsif @item.seller_id != current_user.id and @item.user.id != current_user.id
           - else
             .transaction-details.margin-top-10
-              = "あなたは#{@sell_user.email}さんから商品を買いました。"
+              = "あなたは#{@sell_user.name}さんから商品を買いました。"
             .transaction-box
               .transaction-box__name
                 あなた
@@ -50,7 +50,7 @@
                     .arrow_l
                       商品
               .transaction-box__name
-                = @item.user.email
+                = @item.user.name
         - else
           .item-box__day
             = @item.created_at.to_s(:datetime_jp)

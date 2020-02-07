@@ -19,7 +19,7 @@
             .head-my-character
               - if user_signed_in?
                 .head-my-character__name
-                  = current_user.email
+                  = current_user.name
                 .head-my-character__status
                   = link_to "ログアウト", logout_path
               - else

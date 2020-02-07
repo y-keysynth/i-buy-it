@@ -24,7 +24,7 @@
               .item-box__price
                 = "#{item.price.to_s(:delimited)} 円"
             .item-box__name
-              = item.user.email
+              = item.user.name
               - if current_user == nil
               - elsif current_user.id == item.user_id && item.seller_id == nil
                 .edit-destroy-box

@@ -13,14 +13,14 @@
               .item-container__title
                 = "「#{item.title}」"
               .item-container__price
-                = "#{item.price} 円"
+                = "#{item.price.to_s(:delimited)} 円"
             - else
               .item-container__day
                 = item.created_at.to_s(:datetime_jp)
               .item-container__title
-                = "「#{item.title}」"
-              .item-container__price
                 = "「#{item.title}」を買います！！"
+              .item-container__price
+                = "#{item.price.to_s(:delimited)} 円"
             .item-container__name
               = item.user.email
             - if current_user == nil

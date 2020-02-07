@@ -13,7 +13,7 @@
               .item-container__title
                 = "「#{item.title}」"
               .item-container__price
-                = "#{item.price} 円"
+                = "#{item.price.to_s(:delimited)} 円"
             - else
               .item-container__day
                 = item.created_at.to_s(:datetime_jp)

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy, :show_myself, :show_close_myself, :show_sell, :show_watch_list]
   # GET /items
   # GET /items.json
   def index
@@ -14,20 +14,20 @@ class ItemsController < ApplicationController
   end
 
   def show_myself
-    @items = Item.where(user_id: current_user.id).where(seller_id: nil)
+    @items = Item.where(user_id: current_user.id).where(seller_id: nil).order(created_at: "DESC")
   end
 
   def show_close_myself
-    @items = Item.where(user_id: current_user.id).where.not(seller_id: nil)
+    @items = Item.where(user_id: current_user.id).where.not(seller_id: nil).order(created_at: "DESC")
   end
 
   def show_sell
-    @items = Item.where(seller_id: current_user.id)
+    @items = Item.where(seller_id: current_user.id).order(created_at: "DESC")
   end
 
   def show_watch_list
     ids = Like.where(user_id: current_user.id).pluck(:item_id)
-    @items = Item.where(id: ids)
+    @items = Item.where(id: ids).order(created_at: "DESC")
   end
 
   # GET /items/new

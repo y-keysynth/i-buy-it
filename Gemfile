@@ -70,4 +70,5 @@ gem 'erb2haml'
 gem 'font-awesome-sass'
 gem "jquery-rails"
 gem 'kaminari'
-
+gem 'bootstrap'
+# gem 'bootstrap', '~> 4.3.1'

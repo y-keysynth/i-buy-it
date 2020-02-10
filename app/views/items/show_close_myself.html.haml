@@ -31,7 +31,10 @@
                   = link_to '編集', edit_item_path(item)
                   = link_to '削除', item, class: "margin-left-10", method: :delete, data: { confirm: '本当に削除しますか?' }
               - else
-      = paginate @items
+      - if @page > Kaminari.config.default_per_page
+      - else
+        .pagination
+          = paginate @items
                     
     .main__side-menu
       = render 'side-menu'

@@ -1,6 +1,6 @@
 #wrapper
   .main
-    .main__list
+    .main__list.shadow
       .main__list__page-title
         「買います」募集をした商品 - 売買成立
       - @items.each do |item|
@@ -31,10 +31,9 @@
                   = link_to '編集', edit_item_path(item)
                   = link_to '削除', item, class: "margin-left-10", method: :delete, data: { confirm: '本当に削除しますか?' }
               - else
-      - if @page > Kaminari.config.default_per_page
-      - else
-        .pagination
-          = paginate @items
+      
+      .pagination
+        = paginate @items
                     
     .main__side-menu
       = render 'side-menu'

@@ -3,21 +3,23 @@
   justify-content: center;
   letter-spacing: 20px;
   background-color: #383838;
-  padding: 8px;
+  padding: 4px;
   width: 614px;
+  height: 40px;
   box-sizing: border-box;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  text-align: center;
   a {
     color: #e5e5e5;
-    border: 1px solid red;
+    padding: 10px 0 10px 20px;
   }
   .current {
     color: #696969;
+    padding: 10px 0 10px 20px;
   }
   a:hover {
-    background-color: red;
+    background-color: #696969;
+    border-radius: 50%;
   }
 }
 .shadow {

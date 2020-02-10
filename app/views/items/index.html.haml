@@ -31,10 +31,8 @@
             .item-container__watch
               = render partial: 'items/item', locals:{ item: item }
       
-      - if @page > Kaminari.config.default_per_page
-        .pagination
-          = paginate @items
-      - else
+      .pagination
+        = paginate @items
 
 
     .main__side-menu

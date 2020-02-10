@@ -1,6 +1,6 @@
 #wrapper
   .main
-    .main__list
+    .main__list.shadow
       .main__list__page-title
         ウォッチリストをした商品
       - @items.each do |item|
@@ -30,11 +30,9 @@
                 = link_to '削除', item, class: "margin-left-10", method: :delete, data: { confirm: '本当に削除しますか?' }
             .item-container__watch
               = render partial: 'items/item', locals:{ item: item }
-
-      - if @page > Kaminari.config.default_per_page
-      - else
-        .pagination
-          = paginate @items
+      
+      .pagination
+        = paginate @items
                     
     .main__side-menu
       = render 'side-menu'

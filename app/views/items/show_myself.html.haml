@@ -30,6 +30,7 @@
                 = link_to '削除', item, class: "margin-left-10", method: :delete, data: { confirm: '本当に削除しますか?' }
             .item-container__watch
               = render partial: 'items/item', locals:{ item: item }
-              
+
+      = paginate @items              
     .main__side-menu
       = render 'side-menu'

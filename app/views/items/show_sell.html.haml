@@ -31,5 +31,6 @@
             .item-container__watch
               = render partial: 'items/item', locals:{ item: item }
               
+      = paginate @items              
     .main__side-menu
       = render 'side-menu'

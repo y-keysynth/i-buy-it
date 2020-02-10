@@ -1,8 +1,9 @@
+<font color=white>
 %h2 Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
-    = f.label :name
+    = f.label :url
     %br/
     = f.text_field :name, autofocus: true, autocomplete: "name"
   .field
@@ -23,3 +24,46 @@
   .actions
     = f.submit "Sign up"
 = render "users/shared/links"
+
+-# <font color=white>
+-# %h2 Sign up URL版
+-# = form_with model: @user, url: signup_path do |f|
+-#   = render "devise/shared/error_messages", resource: resource
+-#   .field
+-#     %br/
+-#     コメントに書く文字列
+-#     %br/
+-#     -# = SecureRandom.alphanumeric()
+-#     1234567890
+
+-#   .field
+-#     %br/
+-#     = f.label :comment, "コメント"
+-#     %br/
+-#     = f.text_field :comment, autofocus: true
+-#   .field
+-#     %br/
+-#     = f.label :url, "URL"
+-#     %br/
+-#     = f.text_field :url, autofocus: true
+-#   .field
+-#     %br/
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     %br/
+-#     = f.label :password
+-#     - if @minimum_password_length
+-#       %em
+-#         (#{@minimum_password_length} characters minimum)
+-#     %br/
+-#     = f.password_field :password, autocomplete: "new-password"
+-#   .field
+-#     %br/
+-#     = f.label :password_confirmation
+-#     %br/
+-#     = f.password_field :password_confirmation, autocomplete: "new-password"
+-#   .actions
+-#     = f.submit "Sign up"
+-# = render "users/shared/links"

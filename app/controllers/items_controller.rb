@@ -4,30 +4,36 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all.order(created_at: "DESC").page(params[:page]).per(5)
+    @items = Item.all.order(created_at: "DESC").page(params[:page])
+    @page = @items.total_pages
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
-    @sell_user = User.find_by(id: @item.seller_id)
+    @sell_user = User.find_by(id: @item.seller_id).page(params[:page])
+    @page = @items.total_pages
   end
 
   def show_myself
-    @items = Item.where(user_id: current_user.id).where(seller_id: nil).order(created_at: "DESC")
+    @items = Item.where(user_id: current_user.id).where(seller_id: nil).order(created_at: "DESC").page(params[:page])
+    @page = @items.total_pages
   end
 
   def show_close_myself
-    @items = Item.where(user_id: current_user.id).where.not(seller_id: nil).order(created_at: "DESC")
+    @items = Item.where(user_id: current_user.id).where.not(seller_id: nil).order(created_at: "DESC").page(params[:page])
+    @page = @items.total_pages
   end
 
   def show_sell
-    @items = Item.where(seller_id: current_user.id).order(created_at: "DESC")
+    @items = Item.where(seller_id: current_user.id).order(created_at: "DESC").page(params[:page])
+    @page = @items.total_pages
   end
 
   def show_watch_list
     ids = Like.where(user_id: current_user.id).pluck(:item_id)
-    @items = Item.where(id: ids).order(created_at: "DESC")
+    @items = Item.where(id: ids).order(created_at: "DESC").page(params[:page])
+    @page = @items.total_pages
   end
 
   # GET /items/new

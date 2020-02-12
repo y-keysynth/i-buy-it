@@ -72,3 +72,6 @@ gem "jquery-rails"
 gem 'kaminari'
 gem 'bootstrap'
 gem 'mechanize'
+gem 'ransack'
+gem 'devise-i18n'
+gem 'devise-i18n-views'

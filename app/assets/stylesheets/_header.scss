@@ -2,7 +2,6 @@
   .header {
     &__brand {
       height: 38px;
-      padding: 0 8px;
       display: flex;
       align-items: center;
       background-color: #1b1b1b;
@@ -24,6 +23,22 @@
       color:#e5e5e5;
     }
   }
+
+.header-box {
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+  line-height:38px;
+  padding: 0 8px;
+  &__brand {
+
+  }
+  &__search {
+    
+  }
+}
+
+
 
   .size18 {
     font-size: 18px;

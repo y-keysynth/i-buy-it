@@ -15,7 +15,7 @@
           %span.size18 [Sample Application]
           %span.size16 - I buy it -
           = search_form_for @search, url: items_path do |f|
-            = f.text_field :title_cont, placeholder: 'キーワードを入力...'
+            = f.text_field :title_or_details_cont, placeholder: 'キーワードを入力...'
             = f.submit ("検索する")
 
 

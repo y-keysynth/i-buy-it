@@ -28,7 +28,7 @@
                 .head-my-character__name
                   = current_user.name
                 .head-my-character__status
-                  = link_to "ログアウト", logout_path
+                  = link_to "ログアウト", logout_path, data: { confirm: '本当にログアウトしますか?' }
               - else
                 .head-my-character__name
                   = link_to "ログイン", login_path

@@ -1,7 +1,7 @@
 require 'mechanize'
 
 class Scraping
-  def self.movie_urls
+  def self.lodestone_url
     agent = Mechanize.new
     # puts "URLを入力"
     # url = gets.chomp

@@ -14,12 +14,11 @@
         .header__brand
           .header-box
             .header-box__brand
-              %span.size18 [Sample Application]
-              %span.size16 - I buy it -
+              = link_to "[逆出品サイト]", root_path, class: "size18"
+              -# %span.size16 - I buy it -
             .header-box__search
-              = search_form_for @search, url: items_path do |f|
-                = f.text_field :title_or_details_cont, placeholder: 'キーワードを入力...'
-                = f.submit ("検索する")
+
+              #notice= notice
 
         .header__l-header
           .header-container
@@ -35,7 +34,10 @@
                 .head-my-character__status
                   = link_to "新規登録", signup_path
         .header__main-nav
-          #notice= notice
+
+          = search_form_for @search, url: items_path do |f|
+            = f.text_field :title_or_details_cont, class: "field_width300px", placeholder: 'キーワード検索'
+            = f.submit ("検索する"), class: "display_none"
 
     = yield
 

@@ -21,6 +21,11 @@
           - elsif @item.seller_id == current_user.id
             .transaction-details.margin-top-10
               = "あなたは#{@item.user.name}さんへ商品を売りました。"
+              %br
+              %br
+              = "商品：#{@item.title}"
+              %br
+              = "お金：#{@item.price}"
             .transaction-box
               .transaction-box__name
                 あなた
@@ -38,6 +43,11 @@
           - else
             .transaction-details.margin-top-10
               = "あなたは#{@sell_user.name}さんから商品を買いました。"
+              %br
+              %br
+              = "お金：#{@item.price}"
+              %br
+              = "商品：#{@item.title}"
             .transaction-box
               .transaction-box__name
                 あなた

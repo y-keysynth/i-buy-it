@@ -115,8 +115,6 @@ GEM
     erubi (1.9.0)
     erubis (2.7.0)
     execjs (2.7.0)
-    faker (2.10.1)
-      i18n (>= 1.6, < 2)
     ffi (1.12.2)
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
@@ -353,7 +351,6 @@ DEPENDENCIES
   devise-i18n
   devise-i18n-views
   erb2haml
-  faker
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)

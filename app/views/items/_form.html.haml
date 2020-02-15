@@ -10,12 +10,15 @@
     .field-box__title
       = f.label :title, "タイトル"
     .field-box__form
+      「
       = f.text_field :title, class: "form-size-title"
+      」を買います！！
   .field-box
     .field-box__title
       = f.label :price, "値段"
     .field-box__form
       = f.number_field :price, class: "form-size-price"
+      ギル
   .field-box
     .field-box__title
       = f.label :details, "詳細"

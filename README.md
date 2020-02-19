@@ -24,6 +24,7 @@
 ・運用後はユーザーからフィードバックをもらう。  
 ・エラーメッセージを見やすくする。  
 ・退会を可能にする。  
+<br/>
   
 # DB設計
 <img src="https://user-images.githubusercontent.com/54430228/74808523-5d787d80-532e-11ea-8993-a5da1a20b436.png">

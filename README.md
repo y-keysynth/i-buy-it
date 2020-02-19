@@ -27,5 +27,5 @@
 <br/>
   
 # DB設計
-<img src="https://user-images.githubusercontent.com/54430228/74808523-5d787d80-532e-11ea-8993-a5da1a20b436.png">
+<img src="https://user-images.githubusercontent.com/54430228/74808740-e1cb0080-532e-11ea-8309-0b65d319b381.png">
 

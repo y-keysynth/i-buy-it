@@ -16,12 +16,16 @@ feature 'item', type: :feature do
     visit root_path
     expect(page).to have_content('「買います」募集を作る')
 
-    # ツイートの投稿
-    # expect {
-    #   click_link('「買います」募集を作る')
-    #   expect(current_path).to eq new_item_path
-    #   fill_in 'text', with: 'フィーチャスペックのテスト'
-    #   find('input[type="submit"]').click
-    # }.to change(item, :count).by(1)
+    # 「買います」募集を作る
+    expect {
+      click_link('「買います」募集を作る')
+      visit new_item_path
+      expect(page).to have_content('募集する')
+      fill_in 'item_title', with: 'タイトルテスト'
+      fill_in 'item_price', with: '123456789'
+      fill_in 'item_details', with: '詳細テスト'
+      # find('input[type="submit"]').click
+    }
+    # .to change(item, :count).by(1)
   end
 end

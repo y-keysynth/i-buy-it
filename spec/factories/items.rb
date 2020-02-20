@@ -5,7 +5,7 @@ FactoryBot.define do
     title    {"テストタイトル"}
     price    {1234567890}
     details  {"テスト詳細の書き込み"}
-    user_id  {1}
+    user_id  {0}
   end
 
 end

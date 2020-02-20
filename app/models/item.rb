@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   has_many :liking_users, through: :likes, source: :user
 
   validates :title, length: { in: 1..50 }
-  validates :price, length: { in: 1..11 }
+  validates :price, length: { in: 1..11 }, numericality: { only_integer: true, greater_than: 0 }
   validates :details, presence: true, length: { in: 1..150 }
 
 end

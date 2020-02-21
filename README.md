@@ -15,7 +15,7 @@ Pass: 201309
 # このアプリについて
 逆出品サイトです。  
   
-<img src="https://user-images.githubusercontent.com/54430228/75004921-16b29100-54b0-11ea-9d88-4bf6bd398e28.png"　width=50% height=50%>
+<img src="https://user-images.githubusercontent.com/54430228/75004921-16b29100-54b0-11ea-9d88-4bf6bd398e28.png"　width=50%　 height=50%>
 
 
 逆出品について。  

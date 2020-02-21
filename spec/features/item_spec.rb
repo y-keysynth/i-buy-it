@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 feature 'item', type: :feature do
   scenario 'post item' do
     # ログイン前には「買います」募集を作るがない
@@ -24,8 +25,9 @@ feature 'item', type: :feature do
       fill_in 'item_title', with: 'タイトルテスト'
       fill_in 'item_price', with: '123456789'
       fill_in 'item_details', with: '詳細テスト'
-      # find('input[type="submit"]').click
+      click_on '募集する'
     }
     # .to change(item, :count).by(1)
+    # undefined local variable or method `item'
   end
 end

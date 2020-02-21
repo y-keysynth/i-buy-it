@@ -9,9 +9,9 @@ Pass: 201309
     * パスワード: password
   * 出品者用
     * メールアドレス: order@testaccount.com
-    * パスワード: password
-
-
+    * パスワード: password  
+<br/>
+  
 # このアプリについて
 逆出品サイトです。  
   

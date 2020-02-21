@@ -3,13 +3,13 @@ http://13.113.124.65/
 ID: admin  
 Pass: 201309  
   
-[テスト用アカウント等]
-* 売却者用
-   * メールアドレス: seller@testaccount.com
-   * パスワード: password
-* 出品者用
-   * メールアドレス: order@testaccount.com
-   * パスワード: password
+* テスト用アカウント
+  * 売却者用
+    * メールアドレス: seller@testaccount.com
+    * パスワード: password
+  * 出品者用
+    * メールアドレス: order@testaccount.com
+    * パスワード: password
 
 
 # このアプリについて

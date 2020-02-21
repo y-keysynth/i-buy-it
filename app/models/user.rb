@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_items, through: :likes, source: :item
 
+  validates :name, presence: true, uniqueness: { case_sensitive: true }
+
 end

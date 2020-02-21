@@ -8,22 +8,22 @@
         .field
           = f.label :name, "名前"
           %br/
-          = f.text_field :name, autofocus: true, autocomplete: "name"
+          = f.text_field :name, autofocus: true, autocomplete: "name", id: "name"
         .field
           = f.label :email
           %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email"
+          = f.email_field :email, autofocus: true, autocomplete: "email", id: "email"
         .field
           = f.label :password
           - if @minimum_password_length
             %em
               (#{@minimum_password_length} characters minimum)
           %br/
-          = f.password_field :password, autocomplete: "new-password"
+          = f.password_field :password, autocomplete: "new-password", id: "password"
         .field
           = f.label :password_confirmation
           %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password"
+          = f.password_field :password_confirmation, autocomplete: "new-password", id: "password_confirmation"
         = f.submit "新規登録する", class: "actions"
 
 -# <font color=white>

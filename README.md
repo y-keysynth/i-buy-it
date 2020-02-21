@@ -5,7 +5,7 @@ Pass: 201309
 
 [テスト用アカウント等]
 * 売却者用
-* * メールアドレス: seller@testaccount.com
+ * メールアドレス: seller@testaccount.com
 * * パスワード: password
 * 出品者用
 * * メールアドレス: order@testaccount.com

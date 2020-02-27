@@ -60,7 +60,7 @@
                     .arrow_l
                       商品
               .transaction-box__name
-                = @item.user.name
+                = @sell_user.name
         - else
           .item-box__day
             = @item.created_at.to_s(:datetime_jp)

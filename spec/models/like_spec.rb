@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe Like, type: :model do
   describe '#create' do
     it "user_idとlike_idが存在すれば登録できること" do
-      user=create(:user)
-      item=create(:item)
-      like =build(:like, user_id:user.id, item_id:item.id)
+      user = create(:user)
+      item = create(:item)
+      like = build(:like, user_id:user.id, item_id:item.id)
       like.valid?
       expect(like).to be_valid
     end

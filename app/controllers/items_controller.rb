@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  # before_action :set_item, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy, :show_myself, :show_close_myself, :show_sell, :show_watch_list]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy, :show_myself, :show_close_myself, :show_sell, :show_watch_list]
   # GET /items
   # GET /items.json
   def index
